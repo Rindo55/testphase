@@ -48,7 +48,12 @@ async def tg_handler():
                 queue.remove(i)
 
                 val, id, name, ep_num, video = await start_uploading(i)
+                
+                print("val - ",val)
 
+                if val == None:
+                    await app.send_message(UPLOADS_ID,"❌ Something Went Wrong Check Logs For Error...")
+                    sys.exit()
                 await del_anime(i["title"])
 
                 await save_uploads(i["title"])
