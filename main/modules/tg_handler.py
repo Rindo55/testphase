@@ -47,7 +47,7 @@ async def tg_handler():
 
                 queue.remove(i)
 
-                val, id, name, ep_num, video = await start_uploading(i)
+                val, id, name, video = await start_uploading(i)
                 
                 print("val - ",val)
 
@@ -282,4 +282,4 @@ async def start_uploading(data):
 
         await asyncio.sleep(flood_time)
 
-    return id, tit, name, video
+    return id, name, video
