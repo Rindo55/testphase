@@ -53,10 +53,6 @@ async def tg_handler():
 
                 await save_uploads(i["title"])
 
-                await status.edit(await status_text(f"Adding Links To Index Channel ({INDEX_USERNAME})..."),reply_markup=button1)
-
-                await channel_handler(val,id,name,ep_num, video)
-
                 await status.edit(await status_text("Sleeping For 5 Minutes..."),reply_markup=button1)
 
                 await asyncio.sleep(30)
@@ -281,4 +277,4 @@ async def start_uploading(data):
 
         await asyncio.sleep(flood_time)
 
-    return message_id, id, tit, name, video
+    return id, tit, name, video
