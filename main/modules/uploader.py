@@ -136,6 +136,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl,sourcetext,untext,subti
             os.remove(thumbnail)
     except:
         pass
+    await asyncio.sleep(10)
     return x.message_id
 
 @app.on_message(filters.command("start") & filters.private)
